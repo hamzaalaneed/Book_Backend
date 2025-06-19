@@ -1,0 +1,96 @@
+### Test Server Status
+GET http://localhost:5000/
+
+### Test Signup
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+  "username": "hamza",
+  "password": "hamza123",
+  "fName": "dddddd",
+  "lName": "Check",
+  "role" : "admin"
+}
+### Test Sign-In (Login)
+POST http://localhost:5000/signin
+Content-Type: application/json
+
+{
+  "username": "hamza",
+  "password": "hamza123"
+}
+
+### Get All Books
+GET http://localhost:5000/books
+
+### Get Book by ID
+GET http://localhost:5000/book/6
+
+### Update Book
+PUT http://localhost:5000/book/6
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "type": "Non-Fiction",
+  "price": 19.99
+}
+
+### Delete Book
+DELETE http://localhost:5000/book/7
+
+### ADD NEW BOOK
+POST http://localhost:5000/book
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1LCJ1c2VybmFtZSI6ImhhbXphIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUwMzI5MzM5LCJleHAiOjE3NTAzMzI5Mzl9.BrA-SnwckfHVRB_IAR86hYNb6-93PWj1q1DpK7UHFWE
+
+{
+  "title": "The Art of dotnet ",
+  "type": "backend",
+  "price": 25,
+  "pubId": 3,
+  "authorId": 2
+}
+### ADD NEW PUBLISHER
+POST http://localhost:5000/publisher
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1LCJ1c2VybmFtZSI6ImhhbXphIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUwMzI1MTU2LCJleHAiOjE3NTAzMjg3NTZ9.-ajeVVRJb6f9ccgj5l0SuHaEiOf9Ve52V4lq_eCghJg
+
+{
+  "PName": "NovaPrint Global",
+  "City": "Berlin"
+}
+### DELETE A PUBLISHER
+DELETE http://localhost:5000/publisher/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1LCJ1c2VybmFtZSI6ImhhbXphIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUwMzI1MTU2LCJleHAiOjE3NTAzMjg3NTZ9.-ajeVVRJb6f9ccgj5l0SuHaEiOf9Ve52V4lq_eCghJg
+
+
+
+### ADD NEW AUTHOR
+POST http://localhost:5000/author
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1LCJ1c2VybmFtZSI6ImhhbXphIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUwMzI2ODEwLCJleHAiOjE3NTAzMzA0MTB9.H6MCTJGaahPyZRYVP8VWzj7xt8L7fQMXAewaaMi5P5k
+
+{
+  "FName": "Jane",
+  "LName": "Smith",
+  "Country": "USA",
+  "City": "Los Angeles",
+  "Address": "456 Elm St"
+}
+
+### SEARCH FOR BOOKS BY TITLE FRAGMENT
+GET http://localhost:5000/books/search?q=flutter
+
+### SEARCH AUTHORS BY NAME
+GET http://localhost:5000/authors/search?q=j
+
+### GET BOOKS BY AUTHOR ID
+GET http://localhost:5000/author/2/books
+### Search Publishers by Name
+GET http://localhost:5000/publishers/search?q=nova
+
+### Get Books from a Publisher by ID
+GET http://localhost:5000/publisher/3/books
