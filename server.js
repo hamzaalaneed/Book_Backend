@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const connection = require('./db'); // MySQL connection
+const db = require('./sqliteConnection'); // SQLite connection
 const { requireAdmin } = require('./middlewares/role'); // Updated role-based middleware
 
 const app = express();
